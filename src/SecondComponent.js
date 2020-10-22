@@ -3,7 +3,7 @@ import './App.css';
 
 
 function SecondComponent() {
-    const [weathers,setweathers] = useState(
+    const [weathers] = useState(
         [
             {
                 id : 1 ,
@@ -66,10 +66,10 @@ function SecondComponent() {
     <div >
         {weathers.map((value,index)=>{
             return (
-                <div className='flexbox'>
+                <div key={value.id} className='flexbox'>
                    <div className='flex'>
                         <p>{value.day}</p>
-                        <img className='img' src={value.img}></img>
+                        <img alt='weather condition' className='img' src={value.img}></img>
                         <p>{value.min_tempreture}{' '}{value.max_tempreture}</p>
                    </div>
                     
